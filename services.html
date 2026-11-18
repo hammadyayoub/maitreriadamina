@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Services – Amina RIAD, Avocat en Droit des Affaires</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary-color: #fcbb68;
+      --dark-color: #24285e;
+      --light-bg: #f9f9f9;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Playfair Display', serif; 
+      background-color: var(--light-bg);
+      color: var(--dark-color);
+      line-height: 1.6;
+    }
+
+    header {
+      background-color: var(--dark-color);
+      color: white;
+      padding: 2rem 1rem;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+    }
+
+    header p {
+      font-style: italic;
+      margin-top: 0.5rem;
+    }
+
+    .services-section {
+      padding: 4rem 2rem;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    .services-title {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    .services-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      justify-content: center;
+    }
+
+    .service-card {
+      background-color: white;
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+      flex: 1 1 300px;
+      max-width: 350px;
+      transition: transform 0.3s ease;
+    }
+
+    .service-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .service-icon {
+      font-size: 2rem;
+      color: var(--primary-color);
+      margin-bottom: 1rem;
+    }
+
+    .service-card h3 {
+      margin-bottom: 1rem;
+      color: var(--dark-color);
+    }
+
+    .cta {
+      text-align: center;
+      padding: 3rem 1rem;
+      background-color: var(--primary-color);
+      color: white;
+    }
+
+    .cta h2 {
+      margin-bottom: 1rem;
+    }
+
+    .cta a {
+      background-color: white;
+      color: var(--dark-color);
+      padding: 0.75rem 1.5rem;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background-color 0.3s ease;
+    }
+
+    .cta a:hover {
+      background-color: #eee;
+    }
+
+    .appointment-form {
+      background-color: white;
+      padding: 2rem;
+      max-width: 600px;
+      margin: 3rem auto;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    .appointment-form h3 {
+      text-align: center;
+      margin-bottom: 1.5rem;
+      color: var(--dark-color);
+    }
+
+    .appointment-form label {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-weight: bold;
+    }
+
+    .appointment-form input,
+    .appointment-form textarea,
+    .appointment-form select {
+      width: 100%;
+      padding: 0.75rem;
+      margin-bottom: 1.5rem;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 1rem;
+    }
+
+    .appointment-form button {
+      background-color: var(--primary-color);
+      color: white;
+      padding: 0.75rem 2rem;
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .appointment-form button:hover {
+      background-color: #e0a852;
+    }
+
+    footer {
+      background-color: var(--dark-color);
+      color: white;
+      text-align: center;
+      padding: 1rem;
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 600px) {
+      .service-card {
+        padding: 1.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+      <!-- Header -->
+  <header class="bg-white shadow-md">
+    <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+      <div class="flex items-center space-x-4">
+        <img src="image/logo.png" alt="Logo Maître Riad" class="h-12 w-12 object-contain" />
+        <h1 class="text-2xl font-bold text-dark">Maître Amina Riad</h1>
+      </div>
+      <nav class="space-x-6 text-gray-700 font-medium">
+        <a href="index.html" class="hover:text-main">Accueil</a>
+        <a href="#a-propos" class="hover:text-main">À propos</a>
+        <a href="services.html" class="hover:text-main">Services</a>
+        <a href="#publications" class="hover:text-main">Publications</a>
+        <a href="#contact" class="hover:text-main">Contact</a>
+      </nav>
+    </div>
+  </header>
+  </header>
+
+  <section class="services-section">
+    <div class="services-title">
+      <h2>Nos Services</h2>
+      <p>Un accompagnement juridique complet pour les entreprises</p>
+    </div>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-icon">📑</div>
+        <h3>Création d'entreprise</h3>
+        <p>Choix de la forme juridique, statuts, immatriculation, conseils personnalisés.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🤝</div>
+        <h3>Contrats commerciaux</h3>
+        <p>Négociation, rédaction et audit juridique de vos contrats stratégiques.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">⚖️</div>
+        <h3>Contentieux</h3>
+        <p>Représentation devant les juridictions commerciales et en arbitrage.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">📈</div>
+        <h3>Fusions & acquisitions</h3>
+        <p>Due diligence, rédaction d'actes, accompagnement de bout en bout.</p>
+      </div>
+      <div class="service-card">
+  <div class="service-icon">🧾</div>
+  <h3>Droit fiscal des entreprises</h3>
+  <p>Optimisation fiscale, accompagnement lors de contrôles, gestion des obligations fiscales.</p>
+</div>
+
+<div class="service-card">
+  <div class="service-icon">📚</div>
+  <h3>Conformité réglementaire</h3>
+  <p>Audit de conformité, RGPD, droit de la concurrence, lutte contre le blanchiment.</p>
+</div>
+
+<div class="service-card">
+  <div class="service-icon">🏛️</div>
+  <h3>Secrétariat juridique</h3>
+  <p>Rédaction de PV d’AG, modifications statutaires, dépôt au greffe, suivi annuel.</p>
+</div>
+
+<div class="service-card">
+  <div class="service-icon">🌐</div>
+  <h3>Droit international des affaires</h3>
+  <p>Contrats internationaux, implantation à l’étranger, litiges transfrontaliers.</p>
+</div>
+
+<div class="service-card">
+  <div class="service-icon">🔐</div>
+  <h3>Droit des sociétés</h3>
+  <p>Gestion des relations entre associés, pactes d’associés, gouvernance d’entreprise.</p>
+</div>
+
+<div class="service-card">
+  <div class="service-icon">🛡️</div>
+  <h3>Responsabilité des dirigeants</h3>
+  <p>Conseils et défense en cas de mise en cause personnelle ou pénale.</p>
+</div>
+
+<div class="service-card">
+  <div class="service-icon">💼</div>
+  <h3>Externalisation juridique</h3>
+  <p>Service juridique externalisé pour PME : contrat, conseil, assistance stratégique continue.</p>
+</div>
+
+    </div>
+  </section>
+
+  <section class="appointment-form">
+    <h3>Prendre un rendez-vous</h3>
+    <form action="mailto:votre.email@example.com" method="post" enctype="text/plain">
+      <label for="name">Nom complet</label>
+      <input type="text" id="name" name="Nom" required>
+
+      <label for="email">Adresse e-mail</label>
+      <input type="email" id="email" name="Email" required>
+
+      <label for="date">Date souhaitée</label>
+      <input type="date" id="date" name="Date" required>
+
+      <label for="type">Type de consultation</label>
+      <select id="type" name="Type">
+        <option>Conseil juridique</option>
+        <option>Relecture de contrat</option>
+        <option>Création de société</option>
+        <option>Litige commercial</option>
+      </select>
+
+      <label for="message">Message</label>
+      <textarea id="message" name="Message" rows="4"></textarea>
+
+      <button type="submit">Envoyer la demande</button>
+    </form>
+  </section>
+
+  <section class="cta">
+    <h2>Besoin d’un accompagnement sur mesure ?</h2>
+    <a href="#top">Contactez Amina RIAD</a>
+  </section>
+
+  <footer>
+    &copy; 2025 Amina RIAD – Avocat en Droit des Affaires | Tous droits réservés
+  </footer>
+
+</body>
+</html>
