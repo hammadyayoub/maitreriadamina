@@ -178,18 +178,21 @@
   <section id="contact" class="py-20 bg-gray-100 fade-in">
     <div class="container mx-auto px-6">
       <h3 class="text-3xl font-bold mb-6 text-center text-dark">Contact & Rendez-vous</h3>
-      <form class="max-w-2xl mx-auto space-y-6">
+      <p id="form-status" class="max-w-2xl mx-auto mb-6 hidden rounded-lg px-4 py-3 text-center" role="status"></p>
+      <form class="max-w-2xl mx-auto space-y-6" action="envoyer.php" method="post">
+        <input type="hidden" name="retour" value="index.html">
+        <input type="text" name="societe" tabindex="-1" autocomplete="off" class="absolute" style="position:absolute;left:-9999px" aria-hidden="true">
         <div>
-          <label class="block text-gray-700 mb-2">Nom complet</label>
-          <input type="text" class="w-full p-3 rounded-lg border border-gray-300" placeholder="Votre nom" />
+          <label for="nom" class="block text-gray-700 mb-2">Nom complet</label>
+          <input id="nom" name="nom" type="text" required maxlength="120" class="w-full p-3 rounded-lg border border-gray-300" placeholder="Votre nom" />
         </div>
         <div>
-          <label class="block text-gray-700 mb-2">Adresse e-mail</label>
-          <input type="email" class="w-full p-3 rounded-lg border border-gray-300" placeholder="votre@email.com" />
+          <label for="email" class="block text-gray-700 mb-2">Adresse e-mail</label>
+          <input id="email" name="email" type="email" required maxlength="120" class="w-full p-3 rounded-lg border border-gray-300" placeholder="votre@email.com" />
         </div>
         <div>
-          <label class="block text-gray-700 mb-2">Message</label>
-          <textarea class="w-full p-3 rounded-lg border border-gray-300" rows="5" placeholder="Décrivez votre besoin..."></textarea>
+          <label for="message" class="block text-gray-700 mb-2">Message</label>
+          <textarea id="message" name="message" required maxlength="5000" class="w-full p-3 rounded-lg border border-gray-300" rows="5" placeholder="Décrivez votre besoin..."></textarea>
         </div>
         <button type="submit" class="bg-main hover:bg-yellow-500 text-white px-6 py-3 rounded-lg font-semibold">Envoyer</button>
       </form>
@@ -215,6 +218,16 @@
       }, { threshold: 0.1 });
 
       elements.forEach(el => observer.observe(el));
+
+      const status = document.getElementById("form-status");
+      const envoye = new URLSearchParams(location.search).get("envoye");
+      if (status && envoye === "1") {
+        status.textContent = "Votre message a été envoyé. Le cabinet vous répondra à l’adresse indiquée.";
+        status.className = "max-w-2xl mx-auto mb-6 rounded-lg px-4 py-3 text-center bg-green-100 text-green-800";
+      } else if (status && envoye === "0") {
+        status.textContent = "L’envoi n’a pas abouti. Réessayez, ou écrivez à contact@maitreriadamina.com.";
+        status.className = "max-w-2xl mx-auto mb-6 rounded-lg px-4 py-3 text-center bg-red-100 text-red-800";
+      }
     });
     // Ajouter un écouteur d'événement pour le défilement
 window.addEventListener('scroll', function() {

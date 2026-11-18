@@ -159,6 +159,23 @@
       background-color: #e0a852;
     }
 
+    #form-status {
+      margin-bottom: 1rem;
+      padding: 0.75rem 1rem;
+      border-radius: 8px;
+      text-align: center;
+    }
+
+    #form-status.ok {
+      background-color: #e8f6ee;
+      color: #146c43;
+    }
+
+    #form-status.err {
+      background-color: #fdeCEC;
+      color: #9b1c1c;
+    }
+
     footer {
       background-color: var(--dark-color);
       color: white;
@@ -266,20 +283,24 @@
     </div>
   </section>
 
-  <section class="appointment-form">
+  <section id="rendez-vous" class="appointment-form">
     <h3>Prendre un rendez-vous</h3>
-    <form action="mailto:votre.email@example.com" method="post" enctype="text/plain">
+    <p id="form-status" hidden role="status"></p>
+    <form action="envoyer.php" method="post">
+      <input type="hidden" name="retour" value="services.html">
+      <input type="text" name="societe" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px" aria-hidden="true">
+
       <label for="name">Nom complet</label>
-      <input type="text" id="name" name="Nom" required>
+      <input type="text" id="name" name="nom" required maxlength="120">
 
       <label for="email">Adresse e-mail</label>
-      <input type="email" id="email" name="Email" required>
+      <input type="email" id="email" name="email" required maxlength="120">
 
       <label for="date">Date souhaitée</label>
-      <input type="date" id="date" name="Date" required>
+      <input type="date" id="date" name="date" required>
 
       <label for="type">Type de consultation</label>
-      <select id="type" name="Type">
+      <select id="type" name="type">
         <option>Conseil juridique</option>
         <option>Relecture de contrat</option>
         <option>Création de société</option>
@@ -287,7 +308,7 @@
       </select>
 
       <label for="message">Message</label>
-      <textarea id="message" name="Message" rows="4"></textarea>
+      <textarea id="message" name="message" rows="4" maxlength="5000"></textarea>
 
       <button type="submit">Envoyer la demande</button>
     </form>
@@ -301,6 +322,20 @@
   <footer>
     &copy; 2025 Amina RIAD – Avocat en Droit des Affaires | Tous droits réservés
   </footer>
+
+  <script>
+    const status = document.getElementById("form-status");
+    const envoye = new URLSearchParams(location.search).get("envoye");
+    if (status && envoye === "1") {
+      status.hidden = false;
+      status.className = "ok";
+      status.textContent = "Votre demande a été envoyée. Le cabinet vous répondra à l’adresse indiquée.";
+    } else if (status && envoye === "0") {
+      status.hidden = false;
+      status.className = "err";
+      status.textContent = "L’envoi n’a pas abouti. Réessayez, ou écrivez à contact@maitreriadamina.com.";
+    }
+  </script>
 
 </body>
 </html>
