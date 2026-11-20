@@ -1,0 +1,10 @@
+User-agent: *
+Allow: /
+
+Disallow: /admin.php
+Disallow: /envoyer.php
+Disallow: /config.php
+Disallow: /data/
+Disallow: /includes/
+
+Sitemap: https://maitreriadamina.com/sitemap.xml
